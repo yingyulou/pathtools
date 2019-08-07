@@ -1,84 +1,88 @@
 # pathtools
+
 Utility functions for path operations.
 
-* enter
+## enter
 
-DESCRIPTION
+Auto enter and exit a path.
 
-    Auto enter and exit a path.
+- Usage:
 
-USAGE
+``` Python
+from pathtools import enter
 
-    from pathtools import enter
+# Now we in the outside path
 
-    # Now we in the outside path
+with enter('xxxPath'):
+    # Now we in the xxxPath
+    ...
 
-    with enter('xxxPath'):
-        # Now we in the xxxPath
-        ...
+# Now we return to the outside path
 
-    # Now we return to the outside path
+# Or use it as a decorator
 
-    # Or use it as a decorator
+# Now we in the outside path
 
-    # Now we in the outside path
+@enter('xxxPath')
+def xxx():
+    # Now we in the xxxPath
+    ...
 
-    @enter('xxxPath')
-    def xxx():
-        # Now we in the xxxPath
-        ...
+# Now we return to the outside path
+```
 
-    # Now we return to the outside path
+- Argument:
 
-ARGUMENT
+1. enterPath, str
 
-    * enterPath, str
-        The path you need to enter.
+The path you need to enter
 
+## walk
 
-* walk
+Walk (like os.walk) and glob (like glob.glob) files under a path.
 
-DESCRIPTION
+Return a list.
 
-    Walk (like os.walk) and glob (like glob.glob) files under a path.
+- Usage
 
-    Return a list.
+``` Python
+from pathtools import walk
 
-USAGE
+for fileName in walk('xxxPath', '.xxx'):
+    # Get all the '*.xxx' files in all folders under 'xxxPath'
+```
 
-    from pathtools import walk
+- Argument
 
-    for fileName in walk('xxxPath', '.xxx'):
-        # Get all the '*.xxx' files in all folders under 'xxxPath'
+1. folderPath, str
 
-ARGUMENT
+The path of the folder to walk.
 
-    * folderPath, str
-        The path of the folder to walk.
+2. extStr = '', str
 
-    * extStr = '', str
-        The extension of the target file.
+The extension of the target file.
 
+## iwalk
 
-* iwalk
+Walk (like os.walk) and glob (like glob.iglob) files under a path.
 
-DESCRIPTION
+Return a generator.
 
-    Walk (like os.walk) and glob (like glob.iglob) files under a path.
+- Usage
 
-    Return a generator.
+``` Python
+from pathtools import iwalk
 
-USAGE
+for fileName in iwalk('xxxPath', '.xxx'):
+    # Get all the '*.xxx' files in all folders under 'xxxPath'
+```
 
-    from pathtools import iwalk
+- Argument
 
-    for fileName in iwalk('xxxPath', '.xxx'):
-        # Get all the '*.xxx' files in all folders under 'xxxPath'
+1. folderPath, str
 
-ARGUMENT
+The path of the folder to walk.
 
-    * folderPath, str
-        The path of the folder to walk.
+2. extStr = '', str
 
-    * extStr = '', str
-        The extension of the target file.
+The extension of the target file.
