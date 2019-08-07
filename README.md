@@ -35,7 +35,7 @@ def xxx():
 
 ### Argument
 
-1. enterPath, str
+#### 1. enterPath, str
 
 The path you need to enter
 
@@ -58,11 +58,11 @@ for fileName in walk('xxxPath', '.xxx'):
 
 ### Argument
 
-1. folderPath, str
+#### 1. folderPath, str
 
 The path of the folder to walk.
 
-2. extStr = '', str
+#### 2. extStr = '', str
 
 The extension of the target file.
 
@@ -85,10 +85,10 @@ for fileName in iwalk('xxxPath', '.xxx'):
 
 ### Argument
 
-1. folderPath, str
+#### 1. folderPath, str
 
 The path of the folder to walk.
 
-2. extStr = '', str
+#### 2. extStr = '', str
 
 The extension of the target file.
