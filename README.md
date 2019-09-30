@@ -39,13 +39,13 @@ def xxx():
 
 The path you need to enter
 
-## walk
+## walk, iwalk
 
 ### Description
 
 Walk (like os.walk) and glob (like glob.glob) files under a path.
 
-Return a list.
+Return a list (walk) or generator (iwalk).
 
 ### Usage
 
@@ -53,33 +53,6 @@ Return a list.
 from pathtools import walk
 
 for fileName in walk('xxxPath', '.xxx'):
-    # Get all the '*.xxx' files in all folders under 'xxxPath'
-```
-
-### Argument
-
-#### 1. folderPath, str
-
-The path of the folder to walk.
-
-#### 2. extStr = '', str
-
-The extension of the target file.
-
-## iwalk
-
-### Description
-
-Walk (like os.walk) and glob (like glob.iglob) files under a path.
-
-Return a generator.
-
-### Usage
-
-``` Python
-from pathtools import iwalk
-
-for fileName in iwalk('xxxPath', '.xxx'):
     # Get all the '*.xxx' files in all folders under 'xxxPath'
 ```
 
